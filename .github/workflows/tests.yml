@@ -35,8 +35,5 @@ jobs:
         with:
           command: require symfony/http-kernel ${{ matrix.symfony-versions }} -W
 
-      - name: Run PHPUnit unit tests
-        run: composer test-unit
-
-      - name: Run PHPUnit functional tests
-        run: composer test-functional
+      - name: Run tests
+        run: composer test
