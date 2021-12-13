@@ -30,10 +30,10 @@ jobs:
         with:
           args: --ignore-platform-reqs --quiet
 
-      - name: Download dependencies
+      - name: Install symfony/http-kernel  ${{ matrix.symfony-versions }}
         uses: php-actions/composer@v6
         with:
-          command: require symfony/http-kernel ${{ matrix.symfony-versions }}
+          command: require symfony/http-kernel ${{ matrix.symfony-versions }} -W
 
       - name: Run PHPUnit unit tests
         run: composer test-unit
