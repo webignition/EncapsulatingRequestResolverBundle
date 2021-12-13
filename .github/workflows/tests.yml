@@ -13,6 +13,7 @@ jobs:
       matrix:
         operating-system: [ubuntu-latest]
         php-versions: ['8.0']
+        symfony-versions: ['5.4.*', '6.0.*']
     runs-on: ${{ matrix.operating-system }}
 
     steps:
@@ -28,6 +29,11 @@ jobs:
         uses: php-actions/composer@v6
         with:
           args: --ignore-platform-reqs --quiet
+
+      - name: Download dependencies
+        uses: php-actions/composer@v6
+        with:
+          command: require symfony/http-kernel ${{ matrix.symfony-versions }}
 
       - name: Run PHPUnit unit tests
         run: composer test-unit

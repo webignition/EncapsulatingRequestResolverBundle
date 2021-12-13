@@ -45,7 +45,7 @@
     "require": {
         "php": ">=8.0.2",
         "ext-json": "*",
-        "symfony/http-kernel": "6.0.*"
+        "symfony/http-kernel": "5.4.* || 6.0.*"
     },
     "require-dev": {
         "phpstan/extension-installer": "^1.1",
