@@ -1,0 +1,42 @@
+name: tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  unit:
+    name: PHPUnit tests - PHP ${{ matrix.php-versions }}, Symfony ${{ matrix.symfony-versions }}
+    strategy:
+      matrix:
+        operating-system: [ubuntu-latest]
+        php-versions: ['8.0']
+        symfony-versions: ['5.4.*', '6.0.*']
+    runs-on: ${{ matrix.operating-system }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup php
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-versions }}
+
+      - name: Download dependencies
+        uses: php-actions/composer@v6
+        with:
+          args: --ignore-platform-reqs --quiet
+
+      - name: Install symfony/http-kernel  ${{ matrix.symfony-versions }}
+        uses: php-actions/composer@v6
+        with:
+          command: require symfony/http-kernel ${{ matrix.symfony-versions }} -W
+
+      - name: Run PHPUnit unit tests
+        run: composer test-unit
+
+      - name: Run PHPUnit functional tests
+        run: composer test-functional
