@@ -8,7 +8,7 @@ on:
 
 jobs:
   unit:
-    name: PHPUnit tests - PHP ${{ matrix.php-versions }} ${{ matrix.operating-system }}
+    name: PHPUnit tests - PHP ${{ matrix.php-versions }}, Symfony ${{ matrix.symfony-versions }}
     strategy:
       matrix:
         operating-system: [ubuntu-latest]
