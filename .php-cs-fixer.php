@@ -1,9 +1,9 @@
 <?php
 
 $finder = PhpCsFixer\Finder::create()
-    ->in(__DIR__ . '/src')
-    ->in(__DIR__ . '/tests')
-    ->exclude('Fixtures');
+    ->in(__DIR__ . '/Model')
+    ->in(__DIR__ . '/Services')
+    ->in(__DIR__ . '/Tests');
 
 $config = new PhpCsFixer\Config();
 return $config->setRules([

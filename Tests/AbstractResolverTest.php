@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace webignition\SymfonyEncapsulatingRequestResolver\Tests\Unit;
+namespace webignition\SymfonyEncapsulatingRequestResolver\Tests;
 
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadata;
-use webignition\SymfonyEncapsulatingRequestResolver\EncapsulatingRequestInterface;
-use webignition\SymfonyEncapsulatingRequestResolver\Resolver;
+use webignition\SymfonyEncapsulatingRequestResolver\Model\EncapsulatingRequestInterface;
+use webignition\SymfonyEncapsulatingRequestResolver\Services\Resolver;
 use webignition\SymfonyEncapsulatingRequestResolver\Tests\Request\EncapsulatingCreateUserRequest;
 use webignition\SymfonyEncapsulatingRequestResolver\Tests\Request\EncapsulatingRevokeRefreshTokenRequest;
 use webignition\SymfonyEncapsulatingRequestResolver\Tests\Request\NonEncapsulatingRequestImplementingNothing;
 use webignition\SymfonyEncapsulatingRequestResolver\Tests\Request\NonEncapsulatingRequestImplementingSomething;
 
-class ResolverTest extends TestCase
+abstract class AbstractResolverTest extends TestCase
 {
     private Resolver $resolver;
 
@@ -22,7 +22,7 @@ class ResolverTest extends TestCase
     {
         parent::setUp();
 
-        $this->resolver = new Resolver();
+        $this->resolver = $this->createResolver();
     }
 
     /**
@@ -161,4 +161,6 @@ class ResolverTest extends TestCase
             ],
         ];
     }
+
+    abstract protected function createResolver(): Resolver;
 }

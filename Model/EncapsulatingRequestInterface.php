@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace webignition\SymfonyEncapsulatingRequestResolver;
+namespace webignition\SymfonyEncapsulatingRequestResolver\Model;
 
 use Symfony\Component\HttpFoundation\Request;
 
