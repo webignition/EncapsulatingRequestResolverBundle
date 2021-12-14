@@ -4,5 +4,6 @@ services:
     autoconfigure: true
     public: true
 
-  webignition\SymfonyEncapsulatingRequestResolver\Services\:
-    resource: '../../Services/'
+  webignition\SymfonyEncapsulatingRequestResolver\Services\Resolver:
+    tags:
+      - { name: controller.argument_value_resolver, priority: 50 }
