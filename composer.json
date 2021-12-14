@@ -1,8 +1,8 @@
 {
-    "name": "webignition/symfony-encapsulating-request-resolver",
+    "name": "webignition/encapsulating-request-resolver-bundle",
     "description": "Symfony controller action argument resolver for types that extend Symfony\\Component\\HttpFoundation\\Request",
     "keywords": [],
-    "homepage": "https://github.com/webignition/symfony-encapsulating-request-resolver",
+    "homepage": "https://github.com/webignition/encapsulating-request-resolver-bundle",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -13,7 +13,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "webignition\\SymfonyEncapsulatingRequestResolver\\": ""
+            "webignition\\EncapsulatingRequestResolverBundle\\": ""
         },
         "exclude-from-classmap": [
             "/Tests/"
@@ -21,7 +21,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "webignition\\SymfonyEncapsulatingRequestResolver\\Tests\\": ""
+            "webignition\\EncapsulatingRequestResolverBundle\\Tests\\": ""
         }
     },
     "scripts": {

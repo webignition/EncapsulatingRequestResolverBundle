@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace webignition\SymfonyEncapsulatingRequestResolver\Tests\Functional\Services;
+namespace webignition\EncapsulatingRequestResolverBundle\Tests\Functional\Services;
 
-use webignition\SymfonyEncapsulatingRequestResolver\Services\Resolver;
-use webignition\SymfonyEncapsulatingRequestResolver\Tests\AbstractResolverTest;
-use webignition\SymfonyEncapsulatingRequestResolver\Tests\Functional\TestingKernel;
+use webignition\EncapsulatingRequestResolverBundle\Services\Resolver;
+use webignition\EncapsulatingRequestResolverBundle\Tests\AbstractResolverTest;
+use webignition\EncapsulatingRequestResolverBundle\Tests\Functional\TestingKernel;
 
 class ResolverTest extends AbstractResolverTest
 {

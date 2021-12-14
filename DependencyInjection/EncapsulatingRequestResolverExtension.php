@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace webignition\SymfonyEncapsulatingRequestResolver\DependencyInjection;
+namespace webignition\EncapsulatingRequestResolverBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace webignition\SymfonyEncapsulatingRequestResolver\Tests\Request;
+namespace webignition\EncapsulatingRequestResolverBundle\Tests\Request;
 
 use Symfony\Component\HttpFoundation\Request;
 

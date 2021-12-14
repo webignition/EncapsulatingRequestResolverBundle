@@ -1,6 +1,6 @@
 <?php
 
-namespace webignition\SymfonyEncapsulatingRequestResolver;
+namespace webignition\EncapsulatingRequestResolverBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

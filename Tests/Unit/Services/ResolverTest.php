@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Unit\Services;
 
-use webignition\SymfonyEncapsulatingRequestResolver\Services\Resolver;
-use webignition\SymfonyEncapsulatingRequestResolver\Tests\AbstractResolverTest;
+use webignition\EncapsulatingRequestResolverBundle\Services\Resolver;
+use webignition\EncapsulatingRequestResolverBundle\Tests\AbstractResolverTest;
 
 class ResolverTest extends AbstractResolverTest
 {
