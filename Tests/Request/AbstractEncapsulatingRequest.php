@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace webignition\SymfonyEncapsulatingRequestResolver\Tests\Request;
 
 use Symfony\Component\HttpFoundation\Request;
-use webignition\SymfonyEncapsulatingRequestResolver\EncapsulatingRequestInterface;
+use webignition\SymfonyEncapsulatingRequestResolver\Model\EncapsulatingRequestInterface;
 
 abstract class AbstractEncapsulatingRequest implements EncapsulatingRequestInterface
 {

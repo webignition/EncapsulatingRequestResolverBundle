@@ -21,7 +21,8 @@
   </coverage>
   <testsuites>
     <testsuite name="Default Test Suite">
-      <directory>tests/Unit</directory>
+      <directory>Tests/Unit</directory>
+      <directory>Tests/Functional</directory>
     </testsuite>
   </testsuites>
 </phpunit>

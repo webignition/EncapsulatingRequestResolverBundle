@@ -13,12 +13,15 @@
     ],
     "autoload": {
         "psr-4": {
-            "webignition\\SymfonyEncapsulatingRequestResolver\\": "src"
-        }
+            "webignition\\SymfonyEncapsulatingRequestResolver\\": ""
+        },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
-            "webignition\\SymfonyEncapsulatingRequestResolver\\Tests\\": "tests"
+            "webignition\\SymfonyEncapsulatingRequestResolver\\Tests\\": ""
         }
     },
     "scripts": {
@@ -40,7 +43,10 @@
     "require": {
         "php": ">=8.0.2",
         "ext-json": "*",
-        "symfony/http-kernel": "5.4.* || 6.0.*"
+        "symfony/config": "^6.0",
+        "symfony/dependency-injection": "^6.0",
+        "symfony/http-kernel": "5.4.* || 6.0.*",
+        "symfony/yaml": "^6.0"
     },
     "require-dev": {
         "phpstan/extension-installer": "^1.1",
