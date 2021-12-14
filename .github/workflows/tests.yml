@@ -8,12 +8,12 @@ on:
 
 jobs:
   unit:
-    name: PHPUnit tests - PHP ${{ matrix.php-versions }}, Symfony ${{ matrix.symfony-versions }}
+    name: PHPUnit tests - PHP ${{ matrix.php }}, Symfony ${{ matrix.symfony }}
     strategy:
       matrix:
         operating-system: [ubuntu-latest]
-        php-versions: ['8.0']
-        symfony-versions: ['5.4.*', '6.0.*']
+        php: ['8.0']
+        symfony: ['5.4.*', '6.0.*']
     runs-on: ${{ matrix.operating-system }}
 
     steps:
@@ -23,17 +23,17 @@ jobs:
       - name: Setup php
         uses: shivammathur/setup-php@v2
         with:
-          php-version: ${{ matrix.php-versions }}
+          php-version: ${{ matrix.php }}
 
       - name: Download dependencies
         uses: php-actions/composer@v6
         with:
           args: --ignore-platform-reqs --quiet
 
-      - name: Install symfony/*  ${{ matrix.symfony-versions }}
+      - name: Install symfony/*  ${{ matrix.symfony }}
         uses: php-actions/composer@v6
         with:
-          command: require symfony/config ${{ matrix.symfony-versions }} symfony/dependency-injection ${{ matrix.symfony-versions }} symfony/http-kernel ${{ matrix.symfony-versions }} symfony/yaml ${{ matrix.symfony-versions }} -W
+          command: require symfony/config ${{ matrix.symfony }} symfony/dependency-injection ${{ matrix.symfony }} symfony/http-kernel ${{ matrix.symfony }} symfony/yaml ${{ matrix.symfony }} -W
 
       - name: Run tests
         run: composer test
