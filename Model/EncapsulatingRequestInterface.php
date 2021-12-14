@@ -8,5 +8,5 @@ use Symfony\Component\HttpFoundation\Request;
 
 interface EncapsulatingRequestInterface
 {
-    public function processRequest(Request $request): void;
+    public static function create(Request $request): object;
 }

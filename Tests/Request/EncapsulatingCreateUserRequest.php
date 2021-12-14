@@ -5,21 +5,27 @@ declare(strict_types=1);
 namespace webignition\EncapsulatingRequestResolverBundle\Tests\Request;
 
 use Symfony\Component\HttpFoundation\Request;
+use webignition\EncapsulatingRequestResolverBundle\Model\EncapsulatingRequestInterface;
 
-class EncapsulatingCreateUserRequest extends AbstractEncapsulatingRequest
+class EncapsulatingCreateUserRequest implements EncapsulatingRequestInterface
 {
     public const KEY_EMAIL = 'email';
     public const KEY_PASSWORD = 'password';
 
-    private string $email = '';
-    private string $password = '';
+    public function __construct(
+        private string $email,
+        private string $password
+    ) {
+    }
 
-    public function processRequest(Request $request): void
+    public static function create(Request $request): object
     {
         $requestData = $request->request;
 
-        $this->email = (string) $requestData->get(self::KEY_EMAIL);
-        $this->password = (string) $requestData->get(self::KEY_PASSWORD);
+        return new EncapsulatingCreateUserRequest(
+            (string) $requestData->get(self::KEY_EMAIL),
+            (string) $requestData->get(self::KEY_PASSWORD)
+        );
     }
 
     public function getEmail(): string

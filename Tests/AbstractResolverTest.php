@@ -119,18 +119,22 @@ abstract class AbstractResolverTest extends TestCase
      */
     public function resolveDataProvider(): array
     {
+        $email = 'user@example.com';
+        $password = 'password1!';
+
         $createUserRequest = new Request(
             [],
             [
-                EncapsulatingCreateUserRequest::KEY_EMAIL => 'user@example.com',
-                EncapsulatingCreateUserRequest::KEY_PASSWORD => 'password1!',
+                EncapsulatingCreateUserRequest::KEY_EMAIL => $email,
+                EncapsulatingCreateUserRequest::KEY_PASSWORD => $password,
             ]
         );
 
+        $tokenId = 'token-id';
         $revokeRefreshTokenRequest = new Request(
             [],
             [
-                EncapsulatingRevokeRefreshTokenRequest::KEY_ID => 'token-id',
+                EncapsulatingRevokeRefreshTokenRequest::KEY_ID => $tokenId,
             ]
         );
 
@@ -144,7 +148,7 @@ abstract class AbstractResolverTest extends TestCase
                     false,
                     null
                 ),
-                'expectedEncapsulatingRequest' => new EncapsulatingCreateUserRequest($createUserRequest),
+                'expectedEncapsulatingRequest' => new EncapsulatingCreateUserRequest($email, $password),
             ],
             'resolve EncapsulatingRevokeRefreshTokenRequest' => [
                 'request' => $revokeRefreshTokenRequest,
@@ -155,9 +159,7 @@ abstract class AbstractResolverTest extends TestCase
                     false,
                     null
                 ),
-                'expectedEncapsulatingRequest' => new EncapsulatingRevokeRefreshTokenRequest(
-                    $revokeRefreshTokenRequest
-                ),
+                'expectedEncapsulatingRequest' => new EncapsulatingRevokeRefreshTokenRequest($tokenId),
             ],
         ];
     }

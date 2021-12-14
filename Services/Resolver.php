@@ -38,7 +38,7 @@ class Resolver implements ArgumentValueResolverInterface
         $type = $argument->getType();
 
         if (is_string($type) && class_exists($type)) {
-            $encapsulatingRequest = new $type($request);
+            $encapsulatingRequest = $type::create($request);
 
             if ($encapsulatingRequest instanceof EncapsulatingRequestInterface) {
                 yield $encapsulatingRequest;
