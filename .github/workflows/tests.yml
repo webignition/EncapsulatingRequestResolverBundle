@@ -34,11 +34,7 @@ jobs:
         uses: php-actions/composer@v6
         with:
           command: |
-            require \
-              symfony/config ${{ matrix.symfony-versions }} -W \
-              symfony/dependency-injection ${{ matrix.symfony-versions }} -W \
-              symfony/http-kernel ${{ matrix.symfony-versions }} -W \                            
-              symfony/yaml ${{ matrix.symfony-versions }} -W
+            require symfony/config ${{ matrix.symfony-versions }} symfony/dependency-injection ${{ matrix.symfony-versions }} symfony/http-kernel ${{ matrix.symfony-versions }} symfony/yaml ${{ matrix.symfony-versions }} -W
 
       - name: Run tests
         run: composer test
