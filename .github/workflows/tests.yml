@@ -33,6 +33,7 @@ jobs:
       - name: Download dependencies
         uses: php-actions/composer@v6
         with:
+          command: update
           args: --ignore-platform-reqs ${{ matrix.composer-flags }}
 
 #      - name: Install symfony/*  ${{ matrix.symfony }}
