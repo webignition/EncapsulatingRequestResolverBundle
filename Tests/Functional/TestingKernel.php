@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace webignition\SymfonyEncapsulatingRequestResolver\Tests\Functional;
+namespace webignition\EncapsulatingRequestResolverBundle\Tests\Functional;
 
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\HttpKernel\Bundle\BundleInterface;
 use Symfony\Component\HttpKernel\Kernel;
-use webignition\SymfonyEncapsulatingRequestResolver\EncapsulatingRequestResolverBundle;
+use webignition\EncapsulatingRequestResolverBundle\EncapsulatingRequestResolverBundle;
 
 class TestingKernel extends Kernel
 {

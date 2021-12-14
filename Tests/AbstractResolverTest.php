@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace webignition\SymfonyEncapsulatingRequestResolver\Tests;
+namespace webignition\EncapsulatingRequestResolverBundle\Tests;
 
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadata;
-use webignition\SymfonyEncapsulatingRequestResolver\Model\EncapsulatingRequestInterface;
-use webignition\SymfonyEncapsulatingRequestResolver\Services\Resolver;
-use webignition\SymfonyEncapsulatingRequestResolver\Tests\Request\EncapsulatingCreateUserRequest;
-use webignition\SymfonyEncapsulatingRequestResolver\Tests\Request\EncapsulatingRevokeRefreshTokenRequest;
-use webignition\SymfonyEncapsulatingRequestResolver\Tests\Request\NonEncapsulatingRequestImplementingNothing;
-use webignition\SymfonyEncapsulatingRequestResolver\Tests\Request\NonEncapsulatingRequestImplementingSomething;
+use webignition\EncapsulatingRequestResolverBundle\Model\EncapsulatingRequestInterface;
+use webignition\EncapsulatingRequestResolverBundle\Services\Resolver;
+use webignition\EncapsulatingRequestResolverBundle\Tests\Request\EncapsulatingCreateUserRequest;
+use webignition\EncapsulatingRequestResolverBundle\Tests\Request\EncapsulatingRevokeRefreshTokenRequest;
+use webignition\EncapsulatingRequestResolverBundle\Tests\Request\NonEncapsulatingRequestImplementingNothing;
+use webignition\EncapsulatingRequestResolverBundle\Tests\Request\NonEncapsulatingRequestImplementingSomething;
 
 abstract class AbstractResolverTest extends TestCase
 {

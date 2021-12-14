@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace webignition\SymfonyEncapsulatingRequestResolver\Services;
+namespace webignition\EncapsulatingRequestResolverBundle\Services;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Controller\ArgumentValueResolverInterface;
 use Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadata;
-use webignition\SymfonyEncapsulatingRequestResolver\Model\EncapsulatingRequestInterface;
+use webignition\EncapsulatingRequestResolverBundle\Model\EncapsulatingRequestInterface;
 
 class Resolver implements ArgumentValueResolverInterface
 {
