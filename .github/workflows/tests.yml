@@ -17,8 +17,10 @@ jobs:
         include:
           - symfony: 5.4.*
             composer-flags: --prefer-lowest
+
           - symfony: 6.0.*
             composer-flags: --prefer-stable
+
     runs-on: ${{ matrix.operating-system }}
 
     steps:
@@ -35,11 +37,6 @@ jobs:
         with:
           command: update
           args: --ignore-platform-reqs ${{ matrix.composer-flags }}
-
-#      - name: Install symfony/*  ${{ matrix.symfony }}
-#        uses: php-actions/composer@v6
-#        with:
-#          command: require symfony/config ${{ matrix.symfony }} symfony/dependency-injection ${{ matrix.symfony }} symfony/http-kernel ${{ matrix.symfony }} symfony/yaml ${{ matrix.symfony }} -W
 
       - name: Run tests
         run: composer test
