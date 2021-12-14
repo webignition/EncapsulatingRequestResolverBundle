@@ -18,7 +18,7 @@ jobs:
           - symfony: 5.4.*
             composer-flags: --prefer-lowest
           - symfony: 6.0.*
-              composer-flags: --prefer-stable
+            composer-flags: --prefer-stable
     runs-on: ${{ matrix.operating-system }}
 
     steps:
